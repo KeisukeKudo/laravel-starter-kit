@@ -35,6 +35,28 @@ $ make starter
 $ make build && make up
 ```
 
+### Start the console of each container
+
+can be started with `make exec-*`  
+
+#### Nginx
+
+```bash
+$ make exec-nginx
+```
+
+#### PHP
+
+```bash
+$ make exec-php
+```
+
+#### Database
+
+```bash
+$ make exec-db
+```
+
 ### Access
 
 #### Application

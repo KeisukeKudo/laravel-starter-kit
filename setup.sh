@@ -8,9 +8,4 @@ if [ ! -e $ENV_FILE ];then
 fi
 
 docker-compose build --no-cache
-
-TEMP_DIR=temp-project
-docker-compose run php composer create-project laravel/laravel="${LARAVEL_VERSION}" ${TEMP_DIR} --prefer-dist
-shopt -s dotglob
-mv -f ../${TEMP_DIR}/* ../
-rm -rf ../${TEMP_DIR}
+docker-compose run --rm php sh docker/php/laravel-installer.sh

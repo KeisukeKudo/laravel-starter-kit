@@ -30,6 +30,7 @@ services:
     container_name: "laravel-starter-php"
     environment:
       TZ: ${TIME_ZONE}
+      LARAVEL_VERSION: ${LARAVEL_VERSION}
     volumes:
       - ${PHP_INI_PATH}:/usr/local/etc/php/php.ini
       - ${XDEBUG_INI_PATH}:/usr/local/etc/php/conf.d/zz-xdebug.ini

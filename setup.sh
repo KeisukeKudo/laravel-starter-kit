@@ -8,4 +8,4 @@ if [ ! -e $ENV_FILE ];then
 fi
 
 docker-compose build --no-cache
-docker-compose run --rm php sh docker/php/laravel-installer.sh
+docker-compose run --rm php bash docker/php/laravel-installer.sh

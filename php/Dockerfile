@@ -17,11 +17,12 @@ RUN apt-get update \
   libpng-dev libjpeg-dev libicu-dev \
   nodejs \
   && npm install -g npm \
-  && pecl install xdebug${XDEBUG_VERSION} \
+  && pecl install xdebug${XDEBUG_VERSION} apcu \
+  && echo "extension=apcu.so" > /usr/local/etc/php/conf.d/apcu.ini \
   && docker-php-ext-enable xdebug \
   # Dockerコンテナ内でIlluminate\Http\UploadedFileクラスを利用するには PHP GD が必要
   && docker-php-ext-configure gd --with-jpeg \
-  && docker-php-ext-install gd zip pdo_mysql bcmath intl \
+  && docker-php-ext-install gd zip pdo_mysql bcmath intl mbstring opcache \
   # composer
   && php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" \
   && php -r "if (hash_file('sha384', 'composer-setup.php') === trim(file_get_contents('https://composer.github.io/installer.sig'))) { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;" \

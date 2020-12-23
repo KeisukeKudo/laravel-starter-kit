@@ -42,19 +42,19 @@ can be started with `make exec-*`
 #### Nginx
 
 ```bash
-$ make exec-nginx
+$ make nginx
 ```
 
 #### PHP
 
 ```bash
-$ make exec-php
+$ make php
 ```
 
 #### Database
 
 ```bash
-$ make exec-db
+$ make db
 ```
 
 ### Access

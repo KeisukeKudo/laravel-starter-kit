@@ -37,8 +37,6 @@ $ make build && make up
 
 ### Start the console of each container
 
-can be started with `make exec-*`  
-
 #### Nginx
 
 ```bash
